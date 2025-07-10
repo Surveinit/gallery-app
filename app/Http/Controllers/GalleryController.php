@@ -50,7 +50,7 @@ class GalleryController extends Controller
 
         $request->validate([
             'title' => 'required',
-            'image' => 'nullable|image',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $data = ['title' => $request->title];
